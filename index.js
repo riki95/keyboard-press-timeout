@@ -1,12 +1,10 @@
 var robot = require("robotjs");
 const utils = require('./Utils/utils');
+const logic = require('./Logics/logicExe');
 
 
 
-async function startKeySender() {
-
-
-
+async function startKeySender(args) {
 
     let seconds = 5;
     for (let s = seconds; s >= 0; s--) {
@@ -14,14 +12,8 @@ async function startKeySender() {
         await utils.sleep(1000);
     }
 
-
-    console.log('Loop starting');
-
-    //HSloop();
-    //infiniteLoop();
+    logic.run(args);
 }
 
-var args = process.argv.slice(2);
-console.log(args);
-
-startKeySender();
+let args = process.argv.slice(2);
+startKeySender(args);
