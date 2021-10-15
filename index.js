@@ -5,13 +5,13 @@ function sleep(ms) {
     });
 }
 
-var ks = require('node-key-sender');
+var robot = require("robotjs");
 
 async function startKeySender() {
 
     while (true) {
         await sleep(1000);
-        ks.sendKey('space');
+        robot.keyTap("space");
     }
 }
 
