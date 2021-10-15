@@ -4,15 +4,18 @@ var _ = require('underscore');
 const utils = require('./Utils/utils');
 const logic = require('./Logics/logicExe');
 
-
-
-async function startKeySender(args) {
-
+async function waitForStart() {
     let seconds = 5;
     for (let s = seconds; s >= 0; s--) {
         console.log(`Starting in ${s}`);
         await utils.sleep(1000);
     }
+}
+
+
+async function startKeySender(args) {
+    //waitForStart();
+    
 
     if (args.length === 0) {
         //TODO: run dynamic logic
@@ -30,5 +33,6 @@ async function startKeySender(args) {
     logic.run(args);
 }
 
+console.log(process.argv)
 let args = process.argv.slice(2);
 startKeySender(args);
