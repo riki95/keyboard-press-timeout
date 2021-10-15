@@ -18,5 +18,8 @@
   "homepage": "https://github.com/riki95/keyboard-press-timeout#readme",
   "dependencies": {
     "@nut-tree/nut-js": "^1.7.0"
+  },
+  "devDependencies": {
+    "node-key-sender": "^1.0.11"
   }
 }
