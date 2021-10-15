@@ -1,11 +1,6 @@
 
-function sleep(ms) {
-    return new Promise((resolve) => {
-        setTimeout(resolve, ms);
-    });
-}
-
 var robot = require("robotjs");
+const utils = require('./Utils/utils');
 
 async function HSloop() {
     let key = 'space';
@@ -13,7 +8,7 @@ async function HSloop() {
     while(true) {
         console.log('Opening Card Pack')
         robot.keyTap(key);
-        await sleep(3000);
+        await utils.sleep(3000);
 
         console.log('Unveiling cards');
         let card_n = 5;
@@ -21,7 +16,7 @@ async function HSloop() {
             robot.keyTap(key);
         }
 
-        await sleep(2000);
+        await utils.sleep(2000);
         console.log('Closing Pack');
         robot.keyTap(key);
     }
@@ -31,7 +26,7 @@ async function infiniteLoop() {
     let key = 'space';
 
     while (true) {
-        await sleep(1000);
+        await utils.sleep(1000);
         console.log(`Pressing ${key}`)
         robot.keyTap(key);
     }
@@ -42,7 +37,7 @@ async function startKeySender() {
     let seconds = 5;
     for (let s = seconds; s >= 0; s--) {
         console.log(`Starting in ${s}`);
-        await sleep(1000);
+        await utils.sleep(1000);
     }
 
     console.log('Loop starting');
