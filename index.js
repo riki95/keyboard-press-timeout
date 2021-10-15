@@ -9,7 +9,8 @@ var robot = require("robotjs");
 
 async function startKeySender() {
 
-    for (let s in 5) {
+    let seconds = 5;
+    for (let s = seconds; s >= 0; s--) {
         console.log(`Starting in ${s}`);
         await sleep(1000);
     }
