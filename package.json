@@ -1,0 +1,22 @@
+{
+  "name": "keyboard-press-timeout",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/riki95/keyboard-press-timeout.git"
+  },
+  "author": "Riccardo Basso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/riki95/keyboard-press-timeout/issues"
+  },
+  "homepage": "https://github.com/riki95/keyboard-press-timeout#readme",
+  "dependencies": {
+    "@nut-tree/nut-js": "^1.7.0"
+  }
+}
