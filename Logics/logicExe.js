@@ -15,8 +15,11 @@ function run(args) {
             logic_Heartstone.HSloop();
             break;
         case 'keypress':
-            logic_KeyPress.infiniteLoop(args.slice(1));
+            logic_KeyPress.keySingle(args.slice(1));
             break;
+        // case 'keysequence':
+        //     logic_KeyPress.keySequence(args.slice(1));
+        //     break;
         default:
             console.log('Not a valid command. Abort.');
             process.exit(0);

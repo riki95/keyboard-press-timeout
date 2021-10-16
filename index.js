@@ -20,7 +20,7 @@ async function startKeySender(args) {
     
 
     if (args.length === 0) {
-        args[0] = await utils.askUserInput('Insert functionality name: ');
+        args[0] = await utils.askSingleInput('Insert functionality name: ');
     }
 
     if (_.first(args) === 'help') {

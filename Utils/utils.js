@@ -19,11 +19,27 @@ function sleep(ms) {
 const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
 const prompt = (query) => new Promise((resolve) => rl.question(query, resolve));
 
-async function askUserInput(question) {
-    return await prompt(question)
+async function askSingleInput(question) {
+    return prompt(question)
+}
+
+function askSequenceInput(question) {
+    let answers = [];
+    let current_answer = '';
+
+    while (true) {
+        current_answer = askSingleInput(question);
+
+        if (current_answer != 'q') {
+            break;
+        }
+
+        answers.push(current_answer);
+    }
+
+    return answers;
+    
 }
 
 
-
-
-module.exports = { sleep, askUserInput };
+module.exports = { sleep, askSingleInput, askSequenceInput };
