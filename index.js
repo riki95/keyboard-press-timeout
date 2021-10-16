@@ -16,7 +16,7 @@ async function waitForStart() {
 
 
 async function startKeySender(args) {
-    //waitForStart();
+    waitForStart();
     
 
     if (args.length === 0) {
