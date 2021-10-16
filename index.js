@@ -1,4 +1,3 @@
-var robot = require("robotjs");
 var _ = require('underscore');
 
 

@@ -1,3 +1,6 @@
+var robot = require("robotjs");
+
+
 async function HSloop() {
     let key = 'space';
 
