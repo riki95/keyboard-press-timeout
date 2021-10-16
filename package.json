@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pkg": "pkg ."
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,17 @@
   },
   "homepage": "https://github.com/riki95/keyboard-press-timeout#readme",
   "dependencies": {
+    "pkg": "^5.3.3",
     "robotjs": "^0.6.0",
     "underscore": "^1.13.1"
+  },
+
+  "bin": "index.js",
+  "pkg": {
+    "assets": [
+        "Logics/*",
+        "Utils/*"
+    ],
+    "output": "dist"
   }
 }

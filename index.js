@@ -33,4 +33,4 @@ async function startKeySender(args) {
 }
 
 let args = process.argv.slice(2);
-startKeySender(args);
+startKeySender(['hearthstone']);
