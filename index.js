@@ -1,6 +1,9 @@
 var robot = require("robotjs");
 var _ = require('underscore');
 
+
+
+const helper = require('./Utils/helper');
 const utils = require('./Utils/utils');
 const logic = require('./Logics/logicExe');
 
@@ -18,21 +21,17 @@ async function startKeySender(args) {
     
 
     if (args.length === 0) {
-        //TODO: run dynamic logic
-        console.log('Dynamic logic here');
-        return; //remove return when functionality is ready
+        args[0] = await utils.askUserInput('Insert functionality name: ');
     }
 
-    if (_.first(args) === '-h') {
-        //TODO: run helper here
-        console.log('Helper here');
-        return;
+    if (_.first(args) === 'help') {
+        helper.askInfo();
+        process.exit(0);
     }
 
-
+    console.log('start logic')
     logic.run(args);
 }
 
-console.log(process.argv)
 let args = process.argv.slice(2);
 startKeySender(args);

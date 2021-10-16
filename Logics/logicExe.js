@@ -15,8 +15,8 @@ function run(args) {
         case 'keypress':
             logic_KeyPress.infiniteLoop();
         default:
-            console.log('Not a valid command. Please retry');
-            return;
+            console.log('Not a valid command. Abort.');
+            process.exit(0);
     }
 
 }
