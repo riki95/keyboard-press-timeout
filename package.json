@@ -25,10 +25,10 @@
 
   "bin": "index.js",
   "pkg": {
-    "assets": [
-        "Logics/*",
-        "Utils/*"
+    "scripts": [
+      "Logics/*",
+      "Utils/*"
     ],
-    "output": "dist"
+    "outputPath": "dist"
   }
 }
