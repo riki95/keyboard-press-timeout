@@ -7,4 +7,6 @@
 
 ## Guide
 
-- 
+- Run <code>npm help</code> for instructions
+- Run <code>npm start</code> for dynamic usage
+- Run <code>npm hearthstone</code> for Hearthstone Card Packs opening preset
