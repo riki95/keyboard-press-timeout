@@ -1,6 +1,15 @@
+const logic = require('../Logics/logic');
+
 function askInfo() {
-    console.log('Run program without arguments to be dynamically prompted to send info.');
-    console.log('Run program with first argument set as functionality to call');
+    console.log(`Find below instructions to run the program:
+                Run "npm start" to run the program without a preset
+            `);
+
+    for (let func of Object.values(logic.LOGIC)) {
+        console.log(`
+                Run "npm run ${func}" for ${func} functionality
+            `);
+    }
 }
 
 
