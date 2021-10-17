@@ -16,15 +16,15 @@ async function startKeySender(args) {
 
     if (args.length === 0) {
         args[0] = await utils.askSingleInput('Insert functionality name: ');
-        
-        if (!checkIfKnownFunc(_.first(args))) {
-            console.log(`Unknown function: ${_.first(args)}. \n Run help to see available functions.`);
-            process.exit(0);
-        }
     }
     
     if (_.first(args) === 'help') {
         helper.askInfo();
+        process.exit(0);
+    }
+
+    if (!checkIfKnownFunc(_.first(args))) {
+        console.log(`Unknown function: ${_.first(args)}. \n Run help to see available functions.`);
         process.exit(0);
     }
 
