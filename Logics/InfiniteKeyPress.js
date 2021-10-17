@@ -1,12 +1,17 @@
-const utils = require('../Utils/utils');
 var robot = require("robotjs");
+
+const utils = require('../Utils/utils');
+
 
 
 async function keySingle(args) {
     let key = args[0] ? args[0] : await utils.askSingleInput('Insert button to press: ');
+    let sec = args[1] ? args[1] : await utils.askSingleInput('Insert interval in seconds: ');
+
+    console.log(`Starting KEYPRESS functionality for key ${key} each ${sec} seconds`);
 
     while (true) {
-        await utils.sleep(1000);
+        await utils.sleep(sec * 1000);
         console.log(`Pressing ${key}`)
 
         try {
@@ -20,7 +25,7 @@ async function keySingle(args) {
     }
 }
 
-async function keySequence(args) {
+/* async function keySequence(args) {
     console.log('key sequence')
     if (args.length === 0) {
         args = utils.askSequenceInput('Insert arg: ');
@@ -33,6 +38,6 @@ async function keySequence(args) {
             robot.keyTap(key);
         }
     }
-}
+} */
 
-module.exports = { keySingle, keySequence }
+module.exports = { keySingle, /* keySequence */ }
